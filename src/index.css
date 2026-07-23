@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Fira Code', 'Consolas', monospace;
+  --color-brownie: #5C3A1E;
+  --color-brownie-light: #7A4E2A;
+  --color-brownie-dark: #3D2512;
+  --color-chocolate: #8B5E3C;
+  --color-caramel: #C67B2E;
+  --color-cream: #FFF9F0;
+  --color-warm-white: #FEFCF8;
+  --color-code-green: #16A34A;
+  --color-code-blue: #0EA5E9;
+  --color-code-purple: #9333EA;
+  --color-code-pink: #EC4899;
+  --color-code-orange: #F97316;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--color-warm-white);
+  color: #2D1B0E;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 4px 20px rgba(22, 163, 74, 0.3); }
+  50% { box-shadow: 0 4px 30px rgba(22, 163, 74, 0.5); }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.terminal-window {
+  background: #1E293B;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  border: 1px solid #334155;
+}
+
+.terminal-header {
+  background: #0F172A;
+  padding: 14px 18px;
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #334155;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-dot-red { background: #FF6B6B; }
+.terminal-dot-yellow { background: #FFD93D; }
+.terminal-dot-green { background: #6BCB77; }
+
+.gradient-text {
+  background: linear-gradient(135deg, #16A34A, #0EA5E9, #9333EA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
