@@ -10,11 +10,11 @@
   --color-caramel: #C67B2E;
   --color-cream: #FFF9F0;
   --color-warm-white: #FEFCF8;
-  --color-code-green: #16A34A;
-  --color-code-blue: #0EA5E9;
-  --color-code-purple: #9333EA;
-  --color-code-pink: #EC4899;
-  --color-code-orange: #F97316;
+  --color-code-green: #D98A9E;
+  --color-code-blue: #93AFCE;
+  --color-code-purple: #A99AC9;
+  --color-code-pink: #E3A8BC;
+  --color-code-orange: #E2B457;
 }
 
 html {
@@ -94,7 +94,7 @@ body {
 .terminal-dot-green { background: #6BCB77; }
 
 .gradient-text {
-  background: linear-gradient(135deg, #16A34A, #0EA5E9, #9333EA);
+  background: linear-gradient(135deg, #B56A82, #C08AAE);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

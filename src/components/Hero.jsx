@@ -19,7 +19,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden" style={{background: 'linear-gradient(135deg, #FFF9F0 0%, #FEF3E2 40%, #FDE68A 80%, #FFF9F0 100%)'}}>
+    <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden" style={{background: 'linear-gradient(135deg, #FFF9F0 0%, #FEF3E2 40%, #F7E8EF 80%, #FFF9F0 100%)'}}>
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-code-green/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-code-purple/10 rounded-full blur-3xl"></div>
