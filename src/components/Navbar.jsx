@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FaTerminal, FaTimes, FaBars } from 'react-icons/fa';
+import ThemeToggle from './ThemeToggle.jsx';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,6 +42,7 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+            <ThemeToggle />
             <a
               href="https://wa.me/5524999518926"
               target="_blank"
@@ -71,16 +73,19 @@ export default function Navbar() {
                 className="block text-brownie/70 hover:text-code-green transition-colors font-mono text-sm py-2"
               >
                 {'> '}{link.label}
-              </a>
-            ))}
-            <a
-              href="https://wa.me/5524999518926"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block bg-code-green text-white px-4 py-3 rounded-lg font-mono text-sm font-bold text-center mt-4"
-            >
-              Pedir Agora
-            </a>
+                </a>
+                ))}
+                <div className="flex items-center gap-3">
+                <ThemeToggle />
+                <a
+                  href="https://wa.me/5524999518926"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 block bg-code-green text-white px-4 py-3 rounded-lg font-mono text-sm font-bold text-center"
+                >
+                  Pedir Agora
+                </a>
+                </div>
           </div>
         </div>
       )}
