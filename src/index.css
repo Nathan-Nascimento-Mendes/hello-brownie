@@ -30,17 +30,26 @@
   --t-muted: rgba(92, 58, 30, 0.6);
 }
 
-/* ---------- Tema escuro (brownie noturno) ---------- */
+/* ---------- Tema escuro (preto + branco + verde + laranja + roxo) ---------- */
 [data-theme='dark'] {
-  --t-bg: #1E1410;
-  --t-surface: #2A1D16;
-  --t-cream: #26190F;
-  --t-text: #F3E8DC;
-  --t-brownie: #E8CBA8;        /* "marrom" vira tom claro p/ texto */
-  --t-brownie-light: #D9B48C;
-  --t-brownie-dark: #F3E8DC;
-  --t-chocolate: #C69B6D;
-  --t-muted: rgba(243, 232, 220, 0.55);
+  --t-bg: #000000;             /* fundo preto */
+  --t-surface: #0D0D0D;        /* cards / seções alternadas */
+  --t-cream: #111111;
+  --t-text: #FFFFFF;           /* texto branco */
+  --t-brownie: #4ADE80;        /* verde p/ títulos de destaque */
+  --t-brownie-light: #86EFAC;  /* verde claro */
+  --t-brownie-dark: #FFFFFF;   /* branco p/ headings */
+  --t-chocolate: #A78BFA;      /* roxo suave */
+  --t-muted: rgba(255, 255, 255, 0.6);
+}
+
+/* cores de código no escuro: verde, laranja e roxo vivos */
+[data-theme='dark'] {
+  --color-code-green: #22C55E;
+  --color-code-blue: #FB923C;   /* laranja */
+  --color-code-purple: #8B5CF6; /* roxo */
+  --color-code-pink: #F97316;   /* laranja forte */
+  --color-code-orange: #A3E635; /* verde lima */
 }
 
 html {
@@ -59,7 +68,17 @@ body {
 
 /* utilitários usados nos componentes, agora theme-aware */
 .bg-white { background-color: var(--t-surface) !important; }
-.bg-amber-50 { background-color: var(--t-cream) !important; }
+.bg-amber-50, .bg-amber-100, .from-amber-50, .to-orange-50 {
+  background-color: var(--t-surface) !important;
+}
+.bg-gradient-to-r.from-amber-50.to-orange-50 {
+  background-image: none !important;
+  background-color: var(--t-surface) !important;
+}
+.border-amber-200, .border-amber-200\/50 {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+[data-theme='dark'] .text-amber-600 { color: #FB923C !important; }
 .text-gray-600 { color: var(--t-muted) !important; }
 .text-gray-700 { color: var(--t-muted) !important; }
 
