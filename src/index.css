@@ -3,18 +3,44 @@
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'Fira Code', 'Consolas', monospace;
-  --color-brownie: #5C3A1E;
-  --color-brownie-light: #7A4E2A;
-  --color-brownie-dark: #3D2512;
-  --color-chocolate: #8B5E3C;
+  --color-brownie: var(--t-brownie);
+  --color-brownie-light: var(--t-brownie-light);
+  --color-brownie-dark: var(--t-brownie-dark);
+  --color-chocolate: var(--t-chocolate);
   --color-caramel: #C67B2E;
-  --color-cream: #FFF9F0;
-  --color-warm-white: #FEFCF8;
-  --color-code-green: #16A34A;
-  --color-code-blue: #0EA5E9;
-  --color-code-purple: #9333EA;
-  --color-code-pink: #EC4899;
-  --color-code-orange: #F97316;
+  --color-cream: var(--t-cream);
+  --color-warm-white: var(--t-bg);
+  --color-code-green: #5FA777;
+  --color-code-blue: #C67B2E;
+  --color-code-purple: #7A4E2A;
+  --color-code-pink: #D9A05B;
+  --color-code-orange: #B96A24;
+}
+
+/* ---------- Tema claro (padrão) ---------- */
+:root, [data-theme='light'] {
+  --t-bg: #FEFCF8;            /* fundo geral */
+  --t-surface: #FFFFFF;       /* cards / seções alternadas */
+  --t-cream: #FFF9F0;
+  --t-text: #2D1B0E;
+  --t-brownie: #5C3A1E;
+  --t-brownie-light: #7A4E2A;
+  --t-brownie-dark: #3D2512;
+  --t-chocolate: #8B5E3C;
+  --t-muted: rgba(92, 58, 30, 0.6);
+}
+
+/* ---------- Tema escuro (brownie noturno) ---------- */
+[data-theme='dark'] {
+  --t-bg: #1E1410;
+  --t-surface: #2A1D16;
+  --t-cream: #26190F;
+  --t-text: #F3E8DC;
+  --t-brownie: #E8CBA8;        /* "marrom" vira tom claro p/ texto */
+  --t-brownie-light: #D9B48C;
+  --t-brownie-dark: #F3E8DC;
+  --t-chocolate: #C69B6D;
+  --t-muted: rgba(243, 232, 220, 0.55);
 }
 
 html {
@@ -26,9 +52,16 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--color-warm-white);
-  color: #2D1B0E;
+  background: var(--t-bg);
+  color: var(--t-text);
+  transition: background 0.3s ease, color 0.3s ease;
 }
+
+/* utilitários usados nos componentes, agora theme-aware */
+.bg-white { background-color: var(--t-surface) !important; }
+.bg-amber-50 { background-color: var(--t-cream) !important; }
+.text-gray-600 { color: var(--t-muted) !important; }
+.text-gray-700 { color: var(--t-muted) !important; }
 
 @keyframes blink {
   0%, 100% { opacity: 1; }
@@ -46,8 +79,8 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 4px 20px rgba(22, 163, 74, 0.3); }
-  50% { box-shadow: 0 4px 30px rgba(22, 163, 74, 0.5); }
+  0%, 100% { box-shadow: 0 4px 20px rgba(95, 167, 119, 0.3); }
+  50% { box-shadow: 0 4px 30px rgba(95, 167, 119, 0.5); }
 }
 
 .animate-blink {
@@ -94,7 +127,7 @@ body {
 .terminal-dot-green { background: #6BCB77; }
 
 .gradient-text {
-  background: linear-gradient(135deg, #16A34A, #0EA5E9, #9333EA);
+  background: linear-gradient(135deg, #5FA777, #C67B2E);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
