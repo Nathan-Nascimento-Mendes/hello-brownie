@@ -151,3 +151,41 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* ---------- Hero: fundo theme-aware (respeita dark mode) ---------- */
+.hero-bg {
+  background: linear-gradient(135deg, #FFF9F0 0%, #FEF3E2 40%, #FDE68A 80%, #FFF9F0 100%);
+}
+[data-theme='dark'] .hero-bg {
+  background: linear-gradient(135deg, #001A0D 0%, #04140B 45%, #062A16 80%, #001A0D 100%);
+}
+
+/* No modo escuro o gradiente do destaque vira verde para combinar */
+[data-theme='dark'] .gradient-text {
+  background: linear-gradient(135deg, #4ADE80, #86EFAC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---------- Navbar no modo escuro: PRETO e VERDE (legível) ---------- */
+[data-theme='dark'] nav {
+  background-color: #000000 !important;
+  border-bottom: 1px solid rgba(74, 222, 128, 0.25) !important;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+[data-theme='dark'] nav .navbar-brand,
+[data-theme='dark'] nav .navbar-link {
+  color: #4ADE80 !important;
+}
+[data-theme='dark'] nav .navbar-link:hover {
+  color: #86EFAC !important;
+}
+[data-theme='dark'] nav .navbar-mobile {
+  background-color: #000000 !important;
+  border-top: 1px solid rgba(74, 222, 128, 0.25) !important;
+}
+[data-theme='dark'] .hero-lead {
+  color: rgba(220, 252, 231, 0.85) !important;
+}

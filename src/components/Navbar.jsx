@@ -27,7 +27,7 @@ export default function Navbar() {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a href="#inicio" className="flex items-center gap-2 text-brownie font-mono text-lg font-bold">
+          <a href="#inicio" className="navbar-brand flex items-center gap-2 text-brownie font-mono text-lg font-bold">
             <FaTerminal className="text-xl text-code-green" />
             <span>&lt;HelloBrownie/&gt;</span>
           </a>
@@ -37,7 +37,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-brownie/70 hover:text-code-green transition-colors font-mono text-sm"
+                className="navbar-link text-brownie/70 hover:text-code-green transition-colors font-mono text-sm"
               >
                 {link.label}
               </a>
@@ -63,14 +63,14 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white/98 backdrop-blur-md border-t border-amber-200/50">
+        <div className="navbar-mobile md:hidden bg-white/98 backdrop-blur-md border-t border-amber-200/50">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block text-brownie/70 hover:text-code-green transition-colors font-mono text-sm py-2"
+                className="navbar-link block text-brownie/70 hover:text-code-green transition-colors font-mono text-sm py-2"
               >
                 {'> '}{link.label}
                 </a>
